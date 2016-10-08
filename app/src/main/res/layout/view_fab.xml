@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.clans.fab.FloatingActionMenu
+    android:id="@+id/video_fab_menu"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="16dp"
+    fab:menu_animationDelayPerItem="50"
+    fab:menu_backgroundColor="@android:color/transparent"
+    fab:menu_buttonSpacing="0dp"
+    fab:menu_colorNormal="@color/colorFabNormal"
+    fab:menu_colorPressed="@color/colorFabPressed"
+    fab:menu_colorRipple="#99FFFFFF"
+    fab:menu_fab_size="normal"
+    fab:menu_icon="@drawable/ic_startor_logo_2"
+    fab:menu_openDirection="up"
+    fab:menu_showShadow="true">
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/video_fab_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_share_green_24"
+        fab:fab_colorNormal="@color/colorFabNormal"
+        fab:fab_colorPressed="@color/colorFabPressed"
+        fab:fab_colorRipple="#99FFFFFF"
+        fab:fab_size="normal"/>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/video_fab_coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_coin_yellow_24"
+        fab:fab_colorNormal="@color/colorFabNormal"
+        fab:fab_colorPressed="@color/colorFabPressed"
+        fab:fab_colorRipple="#99FFFFFF"
+        fab:fab_size="normal"/>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/video_fab_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_download_blue_24dp"
+        fab:fab_colorNormal="@color/colorFabNormal"
+        fab:fab_colorPressed="@color/colorFabPressed"
+        fab:fab_colorRipple="#99FFFFFF"
+        fab:fab_size="normal"/>
+</com.github.clans.fab.FloatingActionMenu>

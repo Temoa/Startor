@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/activity_vertical_margin"
+    android:layout_marginRight="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:text="@string/about_startor"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/about_content_text_boss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="32dp"
+        android:drawableStart="@drawable/ic_sina_black_24"
+        android:gravity="center_vertical"
+        android:text="@string/起小点"/>
+
+    <TextView
+        android:id="@+id/about_content_text_girl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:drawablePadding="32dp"
+        android:drawableStart="@drawable/ic_sina_black_24"
+        android:gravity="center_vertical"
+        android:text="@string/长歌"/>
+
+    <TextView
+        android:id="@+id/about_content_text_boy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:drawablePadding="32dp"
+        android:drawableStart="@drawable/ic_sina_black_24"
+        android:gravity="center_vertical"
+        android:text="@string/起小D"/>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:divider="@drawable/shape_line"
+        app:showDividers="end|beginning">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/about_author"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/about_content_text_my_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            tools:text="@string/my_word"/>
+
+        <TextView
+            android:id="@+id/about_content_text_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:drawablePadding="32dp"
+            android:drawableStart="@drawable/ic_github_black_24"
+            android:gravity="center_vertical"
+            android:text="Temoa"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:text="Built with the help of these awesome libraries"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="Volley \n    A burst or emission of many things or a large amount at once."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="Gson \n    A Java serialization/deserialization library that can convert Java Objects into JSON and back."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="Glide \n    A image loading and caching library for Android focused on smooth"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="JieCaoVideoPlayer \n    Ambition is become the most widely used video playback control."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="BaseRecyclerViewAdapterHelper \n    Powerful and flexible RecyclerAdapter Please feel free to use this."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="FileDownloader \n    Android multi-task file download engine."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="FloatingActionButton \n    Yet another implementation of Floating Action Button for Android with lots of features."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="RollViewPager \n    A Viewpager can auto-play."/>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/category"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/action_home"
+            android:checked="true"
+            android:icon="@drawable/ic_item_black_24"
+            android:orderInCategory="100"
+            android:title="@string/first_page"/>
+
+        <item
+            android:id="@+id/action_boss"
+            android:icon="@drawable/ic_item_black_24"
+            android:orderInCategory="100"
+            android:title="@string/boss"/>
+
+        <item
+            android:id="@+id/action_girl"
+            android:icon="@drawable/ic_item_black_24"
+            android:orderInCategory="100"
+            android:title="@string/girl"/>
+
+        <item
+            android:id="@+id/action_boy"
+            android:icon="@drawable/ic_item_black_24"
+            android:orderInCategory="100"
+            android:title="@string/boy"/>
+    </group>
+
+    <group
+        android:id="@+id/options"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/action_download_manager"
+            android:icon="@drawable/ic_download_black_24dp"
+            android:orderInCategory="100"
+            android:title="@string/download_manager"/>
+
+        <item
+            android:id="@+id/action_about"
+            android:icon="@drawable/ic_info_black_24"
+            android:orderInCategory="100"
+            android:title="@string/about"/>
+    </group>
+</menu>

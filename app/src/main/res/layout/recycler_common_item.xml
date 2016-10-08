@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_marginBottom="@dimen/dp_8"
+    android:layout_marginEnd="@dimen/dp_4"
+    android:layout_marginStart="@dimen/dp_4"
+    android:layout_marginTop="@dimen/dp_8"
+    android:background="@color/colorItemBackground"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/item_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/item_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="2"
+        android:padding="@dimen/dp_8"
+        tools:text="《这波怎么说》#英雄联盟五周年#第四集：55开谈IM"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_4"
+            android:drawableStart="@drawable/ic_tv_gray_16"
+            android:gravity="center_vertical"
+            tools:text="13.6万"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_4"
+            android:drawableStart="@drawable/ic_like_gray_16"
+            android:gravity="center_vertical"
+            tools:text="300"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorItemBackground"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_4">
+
+    <TextView
+        android:id="@+id/item_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        tools:text="[谷阿莫]5分钟看完2小时的2016/9/7苹果发布会"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_14">
+
+            <TextView
+                android:id="@+id/item_text_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="bottom|end"
+                tools:text="23.11MB/已完成"/>
+
+            <ProgressBar
+                android:id="@+id/item_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Progress"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/item_btn_play"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#ffffff"
+                android:src="@drawable/ic_play_black_24"/>
+
+            <ImageButton
+                android:id="@+id/item_btn_delete"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#ffffff"
+                android:src="@drawable/ic_detele_black_24dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

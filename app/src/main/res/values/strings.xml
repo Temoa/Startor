@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name_en" translatable="false">Startor</string>
+    <string name="app_name" translatable="false">是大腿</string>
+    <string name="trans">flag_trans</string>
+    <string name="boss" translatable="false">主播真会玩系列</string>
+    <string name="girl" translatable="false">长歌少女系列</string>
+    <string name="boy" translatable="false">起小D守望系列</string>
+    <string name="起小点" translatable="false">起小点</string>
+    <string name="长歌" translatable="false">长歌</string>
+    <string name="起小D" translatable="false">起小D</string>
+    <string name="download_manager">下载管理</string>
+    <string name="about">关于</string>
+    <string name="about_startor">关于STARTOR</string>
+    <string name="about_author">关于作者</string>
+    <string name="introduction" translatable="false">STARTOR团队是2015年天使轮估值2000万的电竞内容制片公司，是一家以编导与创作人员为核心的年轻人团队。起小点视频团队原班人马《主播真会玩》《起小点TOP10》《小学生上线了》（现更名为《青铜修炼手册》）都是优秀作品</string>
+    <string name="my_word">一枚开发者，也是一名游戏爱好者。非常喜欢看起小点的视频，制作良心，从不拖更。喜欢《青铜修炼手册》，毕竟能找里面找到自己和小伙伴们的身影(误)，也喜欢《守望先锋》系列的视频，因为这屁股…得吸。在这里感谢STARTOR团队一直为我们玩家带来如此多的欢乐。</string>
+    <string name="copyright">如果本应用涉及了任何的视频版权问题，请告知，谢谢！</string>
+    <string name="first_page">首页</string>
+</resources>
