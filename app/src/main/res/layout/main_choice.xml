@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/choice_btn_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorChoiceBackground"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/choice_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/ic_choice_real_play_42dp"
+            android:gravity="center"
+            android:text="@string/choice_real_play"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/choice_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/ic_choice_top10_42dp"
+            android:gravity="center"
+            android:text="@string/choice_lol_top"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/choice_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/ic_choice_pupil_42dp"
+            android:gravity="center"
+            android:text="@string/choice_pupil"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/choice_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/ic_choice_ow_42dp"
+            android:gravity="center"
+            android:text="@string/choice_ow_top"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/choice_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/ic_choice_girl_42dp"
+            android:gravity="center"
+            android:text="@string/choice_lying_win"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/choice_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/ic_choice_other_42dp"
+            android:gravity="center"
+            android:text="@string/choice_other"
+            android:textSize="12sp"/>
+    </LinearLayout>
+</LinearLayout>
