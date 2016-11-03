@@ -2,7 +2,6 @@ package com.temoa.startor2.mvpVideo;
 
 import com.temoa.startor2.beans.VideoInfo;
 import com.temoa.startor2.beans.VideoRecommend;
-import com.temoa.startor2.beans.VideoSrc;
 
 /**
  * Created by Temoa
@@ -12,7 +11,7 @@ import com.temoa.startor2.beans.VideoSrc;
 public interface IView {
     void getVideoInfo(VideoInfo data);
 
-    void getVideoSrc(VideoSrc data);
+    void getVideoSrc(String data, int flag);
 
     void getVideoRecommend(VideoRecommend data);
 

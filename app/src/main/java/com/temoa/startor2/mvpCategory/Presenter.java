@@ -1,5 +1,7 @@
 package com.temoa.startor2.mvpCategory;
 
+import android.content.Context;
+
 import com.temoa.startor2.beans.UpVideos.Data.VideoList;
 import com.temoa.startor2.listener.UpVideosWithPagesListener;
 
@@ -18,8 +20,10 @@ public class Presenter implements UpVideosWithPagesListener {
 
     private IView mView;
     private IModel mModel;
+    private Context mContext;
 
-    public Presenter(IView iView) {
+    public Presenter(Context context, IView iView) {
+        mContext = context;
         mView = iView;
         mModel = new ModelImpl();
     }
@@ -30,8 +34,12 @@ public class Presenter implements UpVideosWithPagesListener {
     }
 
     public void onDestroy() {
+        if (mContext != null)
+            mContext = null;
+
         if (mView != null)
             mView = null;
+
         if (mModel != null)
             mModel = null;
     }
@@ -46,6 +54,7 @@ public class Presenter implements UpVideosWithPagesListener {
     public void onSucceed(List<VideoList> data, int flag) {
         if (mView == null)
             return;
+
         switch (flag) {
             case ModelImpl.NEW_DATA:
                 mView.getData(data);
@@ -62,7 +71,7 @@ public class Presenter implements UpVideosWithPagesListener {
 
     @Override
     public void onError(String error) {
-        if (mView != null) {
+        if (mView != null){
             mView.showToast(error);
             mView.changeProgressBarStatus(FLAG_ERROR);
         }

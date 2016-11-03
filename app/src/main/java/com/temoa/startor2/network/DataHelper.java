@@ -39,21 +39,20 @@ public class DataHelper {
      * 获取首页展示的3个视频
      */
     public static List<VideoList> getRollPagerData(List<UpVideos> originList) {
-        List<VideoList> list = getOtherData(originList, 3);
-        return list;
+        return getOtherData(originList, 3);
     }
 
     /**
      * 获取某一作者的视频
      *
      * @param originList 原始集合
-     * @param author     作者名字
+     * @param mid        MID
      */
-    public static List<VideoList> getDataByAuthor(List<UpVideos> originList, String author) {
+    private static List<VideoList> getDataByMID(List<UpVideos> originList, int mid) {
         List<VideoList> list = new ArrayList<>();
         for (UpVideos bean : originList) {
             for (VideoList entity : bean.getData().getVlist()) {
-                if (entity.getAuthor().equals(author)) {
+                if (entity.getMid() == mid) {
                     list.add(entity);
                 }
             }
@@ -71,7 +70,7 @@ public class DataHelper {
         List<VideoList> targetList = new ArrayList<>();
         switch (category) {
             case Constants.REAL_PLAY:
-                List<VideoList> list1 = getDataByAuthor(originList, Constants.boss);
+                List<VideoList> list1 = getDataByMID(originList, Constants.MID_BOSS);
                 for (VideoList entity : list1) {
                     if (entity.getTitle().contains(category))
                         targetList.add(entity);
@@ -80,14 +79,14 @@ public class DataHelper {
             case Constants.LOL_TOP_10:
             case Constants.PUPIL_PLAY:
             case Constants.LYING_WIN:
-                List<VideoList> list2 = getDataByAuthor(originList, Constants.girl);
+                List<VideoList> list2 = getDataByMID(originList, Constants.MID_GIRL);
                 for (VideoList entity : list2) {
                     if (entity.getTitle().contains(category))
                         targetList.add(entity);
                 }
                 return targetList;
             case Constants.OW_TOP_10:
-                List<VideoList> list3 = getDataByAuthor(originList, Constants.boy);
+                List<VideoList> list3 = getDataByMID(originList, Constants.MID_BOY);
                 for (VideoList entity : list3) {
                     // 我也是醉了,小D标题改来改去的
                     String title = entity.getTitle();
@@ -118,7 +117,7 @@ public class DataHelper {
      *
      * @param originList 原始集合
      */
-    public static List<VideoList> getHotData(List<UpVideos> originList) {
+    private static List<VideoList> getHotData(List<UpVideos> originList) {
         List<VideoList> list = new ArrayList<>();
         try {
             list.add(getDataByCategory(originList, Constants.REAL_PLAY).get(0));
@@ -126,9 +125,9 @@ public class DataHelper {
             list.add(getDataByCategory(originList, Constants.OW_TOP_10).get(0));
             list.add(getDataByCategory(originList, Constants.PUPIL_PLAY).get(0));
         } catch (Exception e) {
-            int i = 1;
-            while (list.size() < 4) {
-                list.add(getDataByAuthor(originList, Constants.boss).get(i));
+            int i = 0;
+            while (list.size() <= 4) {
+                list.add(getDataByMID(originList, Constants.MID_BOSS).get(i));
                 i++;
             }
 
@@ -141,13 +140,13 @@ public class DataHelper {
      *
      * @param originList 原始集合
      */
-    public static List<VideoList> getNewestData(List<UpVideos> originList) {
+    private static List<VideoList> getNewestData(List<UpVideos> originList) {
         List<VideoList> list = new ArrayList<>();
-        List<VideoList> bossList = getDataByAuthor(originList, Constants.boss);
+        List<VideoList> bossList = getDataByMID(originList, Constants.MID_BOSS);
         list.add(bossList.get(0));
         list.add(bossList.get(1));
-        list.add(getDataByAuthor(originList, Constants.boy).get(0));
-        list.add(getDataByAuthor(originList, Constants.girl).get(0));
+        list.add(getDataByMID(originList, Constants.MID_BOY).get(0));
+        list.add(getDataByMID(originList, Constants.MID_GIRL).get(0));
         return list;
     }
 
@@ -157,7 +156,7 @@ public class DataHelper {
      * @param originList 原始集合
      * @param size       个数
      */
-    public static List<VideoList> getOtherData(List<UpVideos> originList, int size) {
+    private static List<VideoList> getOtherData(List<UpVideos> originList, int size) {
         List<VideoList> list = new ArrayList<>();
         List<VideoList> otherList = getDataByCategory(originList, Constants.OTHER_VIDEO);
         for (int i = 0; i < size; i++) {

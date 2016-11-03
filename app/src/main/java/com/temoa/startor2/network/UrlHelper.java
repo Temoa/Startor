@@ -1,6 +1,6 @@
 package com.temoa.startor2.network;
 
-import com.temoa.startor2.BilibiliKey;
+import com.temoa.startor2.Config;
 import com.temoa.startor2.utils.CommonUtils;
 import com.temoa.startor2.utils.MD5Utils;
 
@@ -30,11 +30,11 @@ public class UrlHelper {
      */
     public static String getVideoInfo(int aid) {
         String url = "http://api.bilibili.com/view?";
-        String data = "appkey=" + BilibiliKey.APPKEY +
+        String data = "appkey=" + Config.APPKEY +
                 "&id=" + aid +
                 "&page=1" +
                 "&type=json";
-        String md5Str = MD5Utils.strToMD5(data + BilibiliKey.APPSEC);
+        String md5Str = MD5Utils.strToMD5(data + Config.APPSEC);
         return url + data + "&sign=" + md5Str;
     }
 
@@ -52,13 +52,13 @@ public class UrlHelper {
                 + "&_hwid=" + CommonUtils.randomString(16)
                 + "&_p=1"
                 + "&_tid=0"
-                + "&appkey=" + BilibiliKey.NEW_APPKEY
+                + "&appkey=" + Config.NEW_APPKEY
                 + "&cid=" + cid
                 + "&otype=json"
                 + "&platform=android"
                 + "&quality=3"
                 + "&type=" + type;
-        String md5Str = MD5Utils.strToMD5(data + BilibiliKey.NEW_APPSEC);
+        String md5Str = MD5Utils.strToMD5(data + Config.NEW_APPSEC);
         return url + data + "&sign=" + md5Str;
     }
 

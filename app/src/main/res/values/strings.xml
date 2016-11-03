@@ -1,12 +1,8 @@
 <resources>
-    <string name="app_name">Startor2</string>
+    <string name="app_name">STARTOR</string>
 
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-
-
     <string name="nav_home">首页</string>
     <string name="nav_boss">主播真会玩系列</string>
     <string name="nav_girl">长歌少女系列</string>
@@ -21,13 +17,71 @@
     <string name="choice_lying_win">长歌躺赢班</string>
     <string name="choice_other">其他</string>
 
-    <string name="item_hot">热门推荐</string>
-    <string name="item_new_video">最新视频</string>
     <string name="title_activity_category">CategoryActivity</string>
-
     <string name="title_activity_video">VideoActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_download">下载管理</string>
+    <string name="title_activity_about">关于</string>
+
+    <string name="main_adapter_hot_section">热门推荐</string>
+    <string name="main_adapter_new_section">最新视频</string>
+    <string name="main_twice_exit">再按一次退出程序</string>
+    <string name="main_toolbar_title">STARTOR</string>
+
     <string name="video_about">视频相关</string>
     <string name="play_immediately">立即播放</string>
+    <string name="no_cache_video">没有缓存视频</string>
+
+    <string name="my_name">Temoa</string>
+    <string name="boss">起小点</string>
+    <string name="girl">长歌是大腿</string>
+    <string name="boy">起小D是大腿</string>
+    <string name="about_startor">关于STARTOR</string>
+    <string name="about_developer">关于开发者</string>
+    <string name="about_library">Built with the help of these awesome libraries</string>
+    <string name="about_crafted">Crafted by Temoa with</string>
+    <string name="about_rxjava">1.  RxJava \n a library for composing asynchronous and event-based programs by using observable sequences.</string>
+    <string name="about_rxandroid">2.  RxAndroid \n Android specific bindings for RxJava.</string>
+    <string name="about_volley">3.  Volley \n A burst or emission of many things or a large amount at once.</string>
+    <string name="about_gson">4.  Gson \n A Java serialization/deserialization library that can convert Java Objects into JSON and back.</string>
+    <string name="about_glide">5.  Glide \n A image loading and caching library for Android focused on smooth</string>
+    <string name="about_jiecao">6.  JieCaoVideoPlayer \n Ambition is become the most widely used video playback control.</string>
+    <string name="about_downloader">7.  FileDownloader \n Android multi-task file download engine.</string>
+    <string name="about_rollpager">8.  RollViewPager \n A Viewpager can auto-play.</string>
+    <string name="about_startor_detail">STARTOR团队是2015年天使轮估值2000万的电竞内容制片公司，是一家以编导与创作人员为核心的年轻人团队。起小点视频团队原班人马《主播真会玩》《起小点TOP10》《小学生上线了》（现更名为《青铜修炼手册》）都是优秀作品。</string>
+    <string name="about_developer_detail">一枚开发者，也是一名游戏爱好者。非常喜欢看起小点的视频，制作良心，从不拖更。喜欢《青铜修炼手册》，毕竟能找里面找到自己和小伙伴们的身影(误)，也喜欢《守望先锋》系列的视频，因为这屁股…得吸。在这里感谢STARTOR团队一直为我们玩家带来如此多的欢乐。</string>
+
+    <string name="permission_desc">需要权限才能进行相关操作</string>
+    <string name="permission_is_request_succeed">申请权限成功</string>
+    <string name="permission_request_on_you">请到\"设置-应用\"中添加存储空间权限</string>
+
+    <string name="remind">提示</string>
+    <string name="share_succeed">分享成功</string>
+    <string name="share_cancel">分享取消</string>
+    <string name="share_failure">失败</string>
+    <string name="share_wx">微信好友</string>
+    <string name="share_time_line">朋友圈</string>
+    <string name="share_other">其他</string>
+    <string name="share_dialog_wx_error">未安装微信或微信版本过低</string>
+    <string name="share_dialog_no_msg">没有分享信息</string>
+
+    <string name="network_error">出错了,请重试</string>
+
+    <string name="video_video_is_loaded">视频已下载,可直接播放</string>
+    <string name="video_task_is_add">已添加到下载队列</string>
+
+    <string name="category_adapter_load_more">正在加载更多...</string>
+    <string name="category_adapter_end">- END -</string>
+    <string name="category_adapter_load_error">加载出错,请重试</string>
+
+    <string name="download_adpater_pause">已暂停</string>
+    <string name="download_adapter_loaded">已下载</string>
+    <string name="download_adapter_if_delete">是否删除该视频</string>
+    <string name="download_adapter_load_failure">下载失败</string>
+    <string name="download_adapter_not_load">未下载</string>
+    <string name="download_adapter_wait_load">等待下载</string>
+    <string name="download_adapter_start_load">开始下载</string>
+    <string name="download_adapter_connected">已连接</string>
+
+    <string name="yes">是</string>
+    <string name="no">否</string>
 </resources>

@@ -14,31 +14,45 @@ import java.util.List;
 
 public class Presenter implements UpVideosListener {
 
+    static final int FLAG_CACHE = 0;
+    private static final int FLAG_NEW_DATA = 1;
+
+    static final int ROLL_PAGER_DATA = 2;
+    static final int SECTION_DATA = 3;
+
     private IView mView;
     private IModel mModel;
+    private Context mContext;
 
     public Presenter(Context context, IView iView) {
+        mContext = context;
         mView = iView;
         mModel = new ModelImpl(context);
     }
 
     public void onCreate() {
         if (mModel != null)
-            // 首次从缓存获取
-            mModel.getAllData(ModelImpl.FLAG_CACHE, this);
+            // 从缓存获取
+            mModel.getAllData(FLAG_CACHE, this);
     }
 
     public void onDestroy() {
+        if (mContext != null)
+            mContext = null;
+
         if (mView != null)
             mView = null;
-        if (mModel != null)
+
+        if (mModel != null) {
+            mModel.close();
             mModel = null;
+        }
     }
 
 
     public void getNewData() {
         if (mModel != null)
-            mModel.getAllData(ModelImpl.FLAG_NEW_DATA, this);
+            mModel.getAllData(FLAG_NEW_DATA, this);
     }
 
     @Override
@@ -46,14 +60,16 @@ public class Presenter implements UpVideosListener {
         if (mView == null) {
             return;
         }
+
         switch (flag) {
-            case ModelImpl.ROLL_PAGER_DATA:
+            case ROLL_PAGER_DATA:
                 mView.getRollPagerData(data);
                 break;
-            case ModelImpl.SECTION_DATA:
+            case SECTION_DATA:
                 mView.getSectionData(data);
                 break;
         }
+
         mView.hideProgress();
     }
 
@@ -63,6 +79,5 @@ public class Presenter implements UpVideosListener {
             mView.showToast(error);
             mView.hideProgress();
         }
-
     }
 }

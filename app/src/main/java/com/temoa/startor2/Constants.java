@@ -1,5 +1,7 @@
 package com.temoa.startor2;
 
+import android.os.Environment;
+
 /**
  * Created by Temoa
  * on 2016/9/24 13:21
@@ -7,13 +9,13 @@ package com.temoa.startor2;
 
 public class Constants {
 
-    public static final String boss = "起小点";
-    public static final String girl = "长歌是大腿";
-    public static final String boy = "起小D是大腿";
+    public static final String BOSS = "起小点是大腿";
+    public static final String GIRL = "长歌是大腿";
+    public static final String BOY = "起小D是大腿";
 
-    public static final int MID_boss = 1565155;
-    public static final int MID_girl = 3682229;
-    public static final int MID_boy = 30588461;
+    public static final int MID_BOSS = 1565155;
+    public static final int MID_GIRL = 3682229;
+    public static final int MID_BOY = 30588461;
 
     public static final String ALL_VIDEOS = "所有视频";
     public static final String OTHER_VIDEO = "其他视频";
@@ -30,4 +32,11 @@ public class Constants {
     public static final String OW_TOP_10_2 = "起小D守望Top10";
     public static final String REAL_PLAY_OW = "主播真会玩守望篇";
 
+    public static final String BILIBILI_URL = "http://www.bilibili.com/video/av";
+    public static final String BOSS_WEIBO = "http://www.weibo.com/344530832";
+    public static final String GIRL_WEIBO = "http://www.weibo.com/wuxymsn";
+    public static final String BOY_WEIBO = "http://weibo.com/p/1005055935748466?is_hot=1";
+    public static final String MY_GETHUB = "http://github.com/Temoa";
+
+    public static final String DEFAULT_PATH = Environment.getExternalStoragePublicDirectory("").getAbsolutePath() + "/startor/";
 }

@@ -12,5 +12,5 @@ import java.util.List;
 public interface UpVideosListener {
     void onSucceed(List<VideoList> data, int flag);
 
-    void onError(String error);
+    void onError(String msg);
 }

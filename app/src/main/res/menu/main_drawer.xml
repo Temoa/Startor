@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/category">
+
+        <item
+            android:id="@+id/nav_boss"
+            android:icon="@drawable/ic_choice_real_play_42dp"
+            android:orderInCategory="100"
+            android:title="@string/nav_boss"/>
+
+        <item
+            android:id="@+id/nav_girl"
+            android:icon="@drawable/ic_choice_girl_42dp"
+            android:orderInCategory="100"
+            android:title="@string/nav_girl"/>
+
+        <item
+            android:id="@+id/nav_boy"
+            android:icon="@drawable/ic_choice_ow_42dp"
+            android:orderInCategory="100"
+            android:title="@string/nav_boy"/>
+    </group>
+
+    <group
+        android:id="@+id/options">
+
+        <item
+            android:id="@+id/nav_download"
+            android:icon="@drawable/ic_nav_download_24dp"
+            android:orderInCategory="100"
+            android:title="@string/nav_download"/>
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_nav_about_24dp"
+            android:orderInCategory="100"
+            android:title="@string/nav_about"/>
+    </group>
+</menu>

@@ -30,26 +30,27 @@ import rx.schedulers.Schedulers;
  * on 2016/10/12 14:56
  */
 
-public class ModelImpl implements IModel {
-
-    public static final int FLAG_CACHE = 0;
-    public static final int FLAG_NEW_DATA = 1;
-
-    public static final int ROLL_PAGER_DATA = 2;
-    public static final int SECTION_DATA = 3;
+class ModelImpl implements IModel {
 
     private RequestQueue mRequestQueue;
     private ACache mCache;
 
-    public ModelImpl(Context context) {
+    ModelImpl(Context context) {
         mRequestQueue = MyApp.getRequestQueue();
         mCache = ACache.get(context);
     }
 
+    /**
+     * 按照Flag 从缓存获取数据,网络获取数据
+     *
+     * @param flag     FLAG_CACHE 从缓存获取
+     *                 FLAG_NEW_DATA 从网络获取
+     * @param listener 回调
+     */
     @Override
     public void getAllData(int flag, final UpVideosListener listener) {
         // 从缓存获取数据
-        if (flag == FLAG_CACHE) {
+        if (flag == Presenter.FLAG_CACHE) {
             List<UpVideos> cacheData = getDataFromCache();
             if (cacheData != null) {
                 DataHelper.setBaseList(cacheData);
@@ -58,9 +59,10 @@ public class ModelImpl implements IModel {
                 return;
             }
         }
+
         // 从网络获取数据
         final List<UpVideos> baseList = new ArrayList<>();
-        Observable.just(Constants.MID_boss, Constants.MID_girl, Constants.MID_boy)
+        Observable.just(Constants.MID_BOSS, Constants.MID_GIRL, Constants.MID_BOY)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Integer>() {
                     @Override
@@ -69,15 +71,17 @@ public class ModelImpl implements IModel {
                             @Override
                             public void onResponse(UpVideos response) {
                                 if (response == null || !response.isStatus()) {
-                                    listener.onError("返回数据出错,稍后重试");
+                                    listener.onError("出错了");
                                     return;
                                 }
                                 baseList.add(response);
+
                                 // 放进缓存
                                 if (mCache != null) {
                                     int key = response.getData().getVlist().get(0).getMid();
                                     mCache.put(String.valueOf(key), response);
                                 }
+
                                 if (baseList.size() >= 3) {
                                     DataHelper.setBaseList(baseList);
                                     getPageData(listener, baseList);
@@ -94,7 +98,7 @@ public class ModelImpl implements IModel {
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        listener.onError("返回数据出错,稍后重试");
+                        listener.onError("出错了");
                     }
                 });
 
@@ -103,9 +107,9 @@ public class ModelImpl implements IModel {
     private List<UpVideos> getDataFromCache() {
         List<UpVideos> cacheData = new ArrayList<>();
         if (mCache != null) {
-            UpVideos boss = (UpVideos) mCache.getAsObject(String.valueOf(Constants.MID_boss));
-            UpVideos boy = (UpVideos) mCache.getAsObject(String.valueOf(Constants.MID_boy));
-            UpVideos girl = (UpVideos) mCache.getAsObject(String.valueOf(Constants.MID_girl));
+            UpVideos boss = (UpVideos) mCache.getAsObject(String.valueOf(Constants.MID_BOSS));
+            UpVideos boy = (UpVideos) mCache.getAsObject(String.valueOf(Constants.MID_BOY));
+            UpVideos girl = (UpVideos) mCache.getAsObject(String.valueOf(Constants.MID_GIRL));
             if (boss != null && boy != null && girl != null) {
                 cacheData.add(boss);
                 cacheData.add(boy);
@@ -116,6 +120,9 @@ public class ModelImpl implements IModel {
         return null;
     }
 
+    /**
+     * 获取滚动页面的数据
+     */
     @Override
     public void getPageData(final UpVideosListener listener, List<UpVideos> origin) {
         Observable.just(origin)
@@ -130,16 +137,19 @@ public class ModelImpl implements IModel {
                 .subscribe(new Action1<List<VideoList>>() {
                     @Override
                     public void call(List<VideoList> video) {
-                        listener.onSucceed(video, ROLL_PAGER_DATA);
+                        listener.onSucceed(video, Presenter.ROLL_PAGER_DATA);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        listener.onError("返回数据出错,稍后重试");
+                        listener.onError("出错了");
                     }
                 });
     }
 
+    /**
+     * 获取分栏的数据
+     */
     @Override
     public void getSectionData(final UpVideosListener listener, List<UpVideos> origin) {
         Observable.just(origin)
@@ -154,13 +164,19 @@ public class ModelImpl implements IModel {
                 .subscribe(new Action1<List<VideoList>>() {
                     @Override
                     public void call(List<VideoList> video) {
-                        listener.onSucceed(video, SECTION_DATA);
+                        listener.onSucceed(video, Presenter.SECTION_DATA);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        listener.onError("返回数据出错,稍后重试");
+                        listener.onError("出错了");
                     }
                 });
+    }
+
+    @Override
+    public void close() {
+        if (mCache != null)
+            mCache = null;
     }
 }

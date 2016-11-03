@@ -22,7 +22,7 @@
         android:background="@color/colorPrimary"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer"/>
+        app:headerLayout="@layout/main_nav_header"
+        app:menu="@menu/main_drawer"/>
 
 </android.support.v4.widget.DrawerLayout>

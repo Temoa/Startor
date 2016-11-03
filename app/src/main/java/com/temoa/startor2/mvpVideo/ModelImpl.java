@@ -16,14 +16,12 @@ import com.temoa.startor2.network.VolleyErrorHelper;
  * on 2016/10/17 16:53
  */
 
-public class ModelImpl implements IModel {
+class ModelImpl implements IModel {
 
-    public static final String VIDEO_TYPE_MP4 = "mp4";
-    public static final String VIDEO_TYPE_FLV = "flv";
 
     private RequestQueue mRequestQueue;
 
-    public ModelImpl() {
+    ModelImpl() {
         mRequestQueue = MyApp.getRequestQueue();
     }
 
@@ -33,7 +31,7 @@ public class ModelImpl implements IModel {
             @Override
             public void onResponse(VideoInfo response) {
                 if (response != null && response.getCid() != 0)
-                    listener.onSucceed(response, 0);
+                    listener.onSucceed(response, 2);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -44,12 +42,12 @@ public class ModelImpl implements IModel {
     }
 
     @Override
-    public void getVideoSrc(int cid, String type, final VideoCommonListener<VideoSrc> listener) {
+    public void getVideoSrc(int cid, String type, final int flag, final VideoCommonListener<VideoSrc> listener) {
         mRequestQueue.add(RequestsHelper.getVideoSrc(cid, type, new Response.Listener<VideoSrc>() {
             @Override
             public void onResponse(VideoSrc response) {
                 if (response != null && response.getDurl().size() != 0)
-                    listener.onSucceed(response, 1);
+                    listener.onSucceed(response, flag);
             }
         }, new Response.ErrorListener() {
             @Override

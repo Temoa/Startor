@@ -13,7 +13,7 @@ import com.temoa.startor2.listener.VideoCommonListener;
 public interface IModel {
     void getVideoInfo(int aid, VideoCommonListener<VideoInfo> listener);
 
-    void getVideoSrc(int cid, String type, VideoCommonListener<VideoSrc> listener);
+    void getVideoSrc(int cid, String type, int flag, VideoCommonListener<VideoSrc> listener);
 
     void getVideoRecommend(int aid, VideoCommonListener<VideoRecommend> listener);
 }

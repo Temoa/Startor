@@ -16,4 +16,6 @@ public interface IModel {
     void getPageData(UpVideosListener listener, List<UpVideos> origin);
 
     void getSectionData(UpVideosListener listener, List<UpVideos> origin);
+
+    void close();
 }

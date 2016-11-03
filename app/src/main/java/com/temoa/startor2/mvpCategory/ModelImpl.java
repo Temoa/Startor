@@ -1,7 +1,5 @@
 package com.temoa.startor2.mvpCategory;
 
-import android.util.Log;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -29,15 +27,14 @@ import rx.schedulers.Schedulers;
  * on 2016/10/12 20:11
  */
 
-public class ModelImpl implements IModel {
+class ModelImpl implements IModel {
 
-    private static final String TAG = "ModelImpl";
-    public static final int NEW_DATA = 0;
-    public static final int ADD_DATA = 1;
+    static final int NEW_DATA = 0;
+    static final int ADD_DATA = 1;
 
     private RequestQueue mRequestQueue;
 
-    public ModelImpl() {
+    ModelImpl() {
         mRequestQueue = MyApp.getRequestQueue();
     }
 
@@ -68,7 +65,7 @@ public class ModelImpl implements IModel {
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        listener.onError("返回数据出错,稍后重试");
+                        listener.onError("出错了");
                     }
                 });
 
@@ -79,26 +76,28 @@ public class ModelImpl implements IModel {
         int mid;
         switch (videoCategory) {
             case Constants.REAL_PLAY:
-                mid = Constants.MID_boss;
+                mid = Constants.MID_BOSS;
                 break;
             case Constants.LOL_TOP_10:
             case Constants.PUPIL_PLAY:
             case Constants.LYING_WIN:
-                mid = Constants.MID_girl;
+                mid = Constants.MID_GIRL;
                 break;
             case Constants.OW_TOP_10:
-                mid = Constants.MID_boy;
+                mid = Constants.MID_BOY;
                 break;
             default:
                 mid = 0;
         }
+
         if (mid == 0)
             return;
+
         mRequestQueue.add(RequestsHelper.getUpVideos(mid, page, new Response.Listener<UpVideos>() {
             @Override
             public void onResponse(UpVideos response) {
                 if (response == null || !response.isStatus()) {
-                    listener.onError("返回数据出错,稍后重试");
+                    listener.onError(null);
                     return;
                 }
                 Observable.just(response)
@@ -121,9 +120,7 @@ public class ModelImpl implements IModel {
                         }, new Action1<Throwable>() {
                             @Override
                             public void call(Throwable throwable) {
-                                Log.i(TAG, throwable.toString());
-                                throwable.printStackTrace();
-                                listener.onError("返回数据出错,稍后重试");
+                                listener.onError("出错了");
                             }
                         });
             }
