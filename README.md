@@ -44,7 +44,7 @@
 已知BUG
 * 分类页面[CategoryActivity ](https://github.com/Temoa/Startor/blob/master/app/src/main/java/com/temoa/startor2/CategoryActivity.java), 不知道什么原因, "守望先锋TOP10"分类中, 当再无数据添加时, 调用了loadCompleted() ,不会显示RecyclerView 的Footer, 其他分类都正常!
 
-* 下载的速度可能比较慢。和程序没关系，B站大会员你懂的，毕竟我不是
+* 下载的速度可能比较慢。和程序没关系，B站大会员你懂的，毕竟我不是╮(￣▽￣)╭
 
 * 热门推荐的算法我在考虑如何实现才好，暂时这个是有问题的
 
@@ -56,7 +56,10 @@
 * bilibili官方文档搬运
 [BilibiliAPIDocs](https://github.com/fython/BilibiliAPIDocs)
 
-还有就是APPKEY的问题. 直接编译本项目是不行的, 需要将你拥有的B站APPKEY填写在[BilibiliKey ](https://github.com/Temoa/Startor/blob/master/app/src/main/java/com/temoa/startor2/BilibiliKey.java)这个项目文件中. 请求视频信息和播放地址的获取都需要APPKEY。
+直接编译本项目是不行的, 需要将你拥有的B站APPKEY填写在项目中的*Config.java*。请求视频信息和播放地址的获取都需要APPKEY。
+
+当然还有微信分享的APPKEY, 也需要填写进去，还要处理打包的问题，balabala...最简单是直接下载APK，往上滚动页面
+
 
 ## Built with the help of these awesome libraries
 
