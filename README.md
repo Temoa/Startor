@@ -26,8 +26,11 @@
 
 ## 更新日志
 
-* v0.2.4
-    * 最初版本, 修复API
+* v0.2.6
+    * 添加微信分享功能
+    * 添加权限检查（之前无耻的将SDK 降低为21，避免了程序安装后获取权限）
+    * 优化界面、修复BUG
+    * 完成视频下载功能，模仿了[FileDownloader](https://github.com/lingochamp/FileDownloader) Adapter 的写法
 
 * v0.2.5
     * 使用MVP进行重构
@@ -35,11 +38,8 @@
     * 视频下载功能被屏蔽, 感觉逻辑不行
     * 替换为自己实现的RecyclerView
 
-* v0.2.6
-    * 添加微信分享功能
-    * 添加权限检查（之前无耻的将SDK 降低为21，避免了程序安装后获取权限）
-    * 优化界面、修复BUG
-    * 完成视频下载功能，模仿了[FileDownloader](https://github.com/lingochamp/FileDownloader) Adapter 的写法
+* v0.2.4
+    * 最初版本, 修复API
 
 已知BUG
 * 分类页面[CategoryActivity ](https://github.com/Temoa/Startor/blob/master/app/src/main/java/com/temoa/startor2/CategoryActivity.java), 不知道什么原因, "守望先锋TOP10"分类中, 当再无数据添加时, 调用了loadCompleted() ,不会显示RecyclerView 的Footer, 其他分类都正常!
