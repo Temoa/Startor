@@ -24,13 +24,15 @@
 
 [Fir.im](http://fir.im/startor)
 
+不支持5.0以前的Android 版本，因为项目中使用了SVG 的资源，还没做适配。
+
 ## 更新日志
 
 * v0.2.6
     * 添加微信分享功能
     * 添加权限检查（之前无耻的将SDK 降低为21，避免了程序安装后获取权限）
     * 优化界面、修复BUG
-    * 完成视频下载功能，模仿了[FileDownloader](https://github.com/lingochamp/FileDownloader) Adapter 的写法
+    * 完成视频下载功能，模仿了[FileDownloader](https://github.com/lingochamp/FileDownloader) 例子中RecyclerView.Adapter 的写法
 
 * v0.2.5
     * 使用MVP进行重构
