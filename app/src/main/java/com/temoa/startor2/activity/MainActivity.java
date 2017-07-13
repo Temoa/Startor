@@ -127,8 +127,10 @@ public class MainActivity extends AppCompatActivity implements IView,
             @Override
             public void onItemClick(int position) {
                 VideoList video = mPagerAdapter.getData(position);
-                if (video != null)
-                    VideoActivity.launch(MainActivity.this, video.getAid(), video.getPic());
+                if (video != null) {
+                    String picUrl = "https:" + video.getPic();
+                    VideoActivity.launch(MainActivity.this, video.getAid(), picUrl);
+                }
             }
         });
         mRollPagerView.setAdapter(mPagerAdapter);
@@ -146,7 +148,8 @@ public class MainActivity extends AppCompatActivity implements IView,
         mRecyclerAdapter.addOnItemClickListener(new HomeAdapter.ItemClickListener() {
             @Override
             public void onItemClickListener(View view, int pos, VideoList video) {
-                VideoActivity.launch(MainActivity.this, video.getAid(), video.getPic());
+                String picUrl = "https:" + video.getPic();
+                VideoActivity.launch(MainActivity.this, video.getAid(), picUrl);
             }
         });
         mRecyclerAdapter.addOnItemChildClickListener(new HomeAdapter.ItemChildClickListener() {

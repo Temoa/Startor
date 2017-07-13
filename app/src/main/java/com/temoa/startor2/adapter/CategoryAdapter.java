@@ -118,7 +118,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
     private void bindCommonViewHolder(RecyclerHolder holder, final int pos) {
         final VideoList video = mData.get(pos);
-        holder.setImageByUrl(R.id.item_image, mContext, video.getPic());
+        String picUrl = "https:" + video.getPic();
+        holder.setImageByUrl(R.id.item_image, mContext, picUrl);
         holder.setText(R.id.item_title, video.getTitle());
         holder.setText(R.id.item_play, CommonUtils.formatNumber(video.getPlay()));
         holder.setText(R.id.item_likes, CommonUtils.formatNumber(video.getFavorites()));

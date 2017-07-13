@@ -17,7 +17,7 @@ public class UrlHelper {
      * @param page 某页面数
      */
     public static String getUpVideos(int mid, int page) {
-        return "http://space.bilibili.com/ajax/member/getSubmitVideos?mid=" +
+        return "https://space.bilibili.com/ajax/member/getSubmitVideos?mid=" +
                 mid +
                 "&page=" +
                 page;
@@ -29,12 +29,12 @@ public class UrlHelper {
      * @param aid 视频AV号
      */
     public static String getVideoInfo(int aid) {
-        String url = "http://api.bilibili.com/view?";
-        String data = "appkey=" + Config.APPKEY +
+        String url = "https://api.bilibili.com/view?";
+        String data = "appkey=" + Config.NEW_APPKEY +
                 "&id=" + aid +
                 "&page=1" +
                 "&type=json";
-        String md5Str = MD5Utils.strToMD5(data + Config.APPSEC);
+        String md5Str = MD5Utils.strToMD5(data + Config.NEW_APPSEC);
         return url + data + "&sign=" + md5Str;
     }
 
@@ -45,7 +45,7 @@ public class UrlHelper {
      * @param type mp4 or flv
      */
     public static String getVideoSrc(int cid, String type) {
-        String url = "http://interface.bilibili.com/playurl?";
+        String url = "https://interface.bilibili.com/playurl?";
         String data = "_appver=424000"
                 + "&_device=android"
                 + "&_down=0"
@@ -68,6 +68,6 @@ public class UrlHelper {
      * @param aid 视频AV号
      */
     public static String getVideoRecommend(int aid) {
-        return "http://api.bilibili.cn/author_recommend?aid=" + aid;
+        return "https://api.bilibili.cn/author_recommend?aid=" + aid;
     }
 }

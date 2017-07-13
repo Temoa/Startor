@@ -95,9 +95,9 @@ public class VideoActivity extends AppCompatActivity implements IView {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
         outState.putInt(EXTRA_AID, aid);
         outState.putString(EXTRA_PIC, videoCover);
+        super.onSaveInstanceState(outState);
     }
 
     @Override

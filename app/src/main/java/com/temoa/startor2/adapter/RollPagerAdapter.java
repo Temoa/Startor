@@ -33,8 +33,9 @@ public class RollPagerAdapter extends StaticPagerAdapter {
         view.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
+        String url = "https:" + mData.get(i).getPic();
         Glide.with(mContext)
-                .load(mData.get(i).getPic())
+                .load(url)
                 .dontAnimate()
                 .into(view);
         return view;

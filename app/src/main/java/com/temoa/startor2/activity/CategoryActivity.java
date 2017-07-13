@@ -54,8 +54,8 @@ public class CategoryActivity extends AppCompatActivity implements IView {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
         outState.putString(EXTRA_CATEGORY, videoCategory);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -95,7 +95,8 @@ public class CategoryActivity extends AppCompatActivity implements IView {
         mRecyclerAdapter.addItemClickListener(new CategoryAdapter.ItemClickListener() {
             @Override
             public void onItemClickListener(View view, int pos, VideoList video) {
-                VideoActivity.launch(CategoryActivity.this, video.getAid(), video.getPic());
+                String picUrl = "https:" + video.getPic();
+                VideoActivity.launch(CategoryActivity.this, video.getAid(), picUrl);
             }
         });
 

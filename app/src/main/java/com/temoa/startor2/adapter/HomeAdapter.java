@@ -117,7 +117,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerHolder> implements
         if (mData.size() == 0)
             return;
         final VideoList video = mData.get(i);
-        holder.setImageByUrl(R.id.main_img, mContext, video.getPic());
+        String picUrl = "https:" + video.getPic();
+        holder.setImageByUrl(R.id.main_img, mContext, picUrl);
         holder.setText(R.id.mian_title, video.getTitle());
         holder.setText(R.id.main_play, CommonUtils.formatNumber(video.getPlay()));
         holder.setText(R.id.main_like, CommonUtils.formatNumber(video.getFavorites()));

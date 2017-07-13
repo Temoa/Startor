@@ -7,8 +7,8 @@ android {
         applicationId "com.temoa.startor2"
         minSdkVersion 19
         targetSdkVersion 24
-        versionCode 11
-        versionName "0.2.6"
+        versionCode 12
+        versionName "0.2.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -37,6 +37,11 @@ android {
             keyPassword KEY_PASSWORD
         }
     }
+
+    lintOptions {
+        //忽略警告
+        ignoreWarnings true
+    }
 }
 
 dependencies {
@@ -60,7 +65,8 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     // 视频播放器
-    compile 'fm.jiecao:jiecaovideoplayer:4.6.5'
+//    compile 'fm.jiecao:jiecaovideoplayer:4.6.5'
+    compile 'fm.jiecao:jiecaovideoplayer:5.6'
     // 文件下载
     compile 'com.liulishuo.filedownloader:library:1.2.2'
     // 微信
