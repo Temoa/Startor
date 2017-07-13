@@ -93,7 +93,7 @@ email: temoa_yui@163.com
 
 ## LICENSE
 ```
-   Copyright 2016 Temoa Lai
+   Copyright 2017 Temoa Lai
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
