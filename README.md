@@ -88,13 +88,7 @@
 
 ## 关于我
 
-[![Wercker](https://img.shields.io/badge/Weibo-Tem0a__-red.svg)](http://weibo.com/lailaizuiaiyiyi/profile?rightmod=1&wvr=6&mod=personinfo)
-
 一枚的Android Developer。
-
-email: temoa_yui@163.com
-
-如果有想和我交流的开发心得的同学, 互粉一下微博。私信一下说明来意。
 
 ## LICENSE
 ```
